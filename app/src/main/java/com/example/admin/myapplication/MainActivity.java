@@ -3,6 +3,7 @@ package com.example.admin.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent=getIntent();
+        int pid=intent.getIntExtra("pid",0);
+        Log.i("我们接收到了id",""+pid);
+
         this.textView=(TextView) findViewById(R.id.abc);
         this.button=(Button)findViewById(R.id.button);
         this.button.setOnClickListener(new View.OnClickListener() {
@@ -30,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         String weatherId="CN101010200";
-        String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=284c0b03c7a247dd8fb171e45f2e0a1e";
+        String weatherUrl = "http://guolin.tech/api/china/"+pid;
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onResponse(Call call, Response response) throws IOException {

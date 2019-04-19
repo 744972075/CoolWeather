@@ -2,4 +2,6 @@
 <resources>
     <item name="button" type="id" />
     <item name="abcd" type="id" />
+    <item name="list_view" type="id" />
+    <item name="button1" type="id" />
 </resources>
