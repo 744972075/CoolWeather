@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="button" type="id" />
-    <item name="abcd" type="id" />
-    <item name="list_view" type="id" />
-    <item name="button1" type="id" />
+    <item name="list_view2" type="id" />
 </resources>
